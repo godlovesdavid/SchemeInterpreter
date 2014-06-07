@@ -1,0 +1,75 @@
+Here are some examples of output.
+
+
+> (member? 3 '(1 2 3))
+
+#t
+> (member? 'b '(a (b c) d))
+
+#f
+> (remove-last 'a '(b a n a n a s))
+
+(b a n a n s)
+> (remove-last '(a b) '(a b (a b) a b (b a) a b (a b) a b))
+
+(a b (a b)a b (b a)a b a b)
+> (same-structure? '(1 (a (b 3.14) ((c)))) '(3 (z (x 1.23) ((q)))))
+
+#t
+> (same-structure? '(1 (a (b 3.14) ((c)))) '(3 (z (x 3) ((q)))))
+
+#f
+> (same-structure? '(1 2 3 4 5) '(5 4 3 2))
+
+#f
+> (same-structure? '() '())
+
+#t
+> (same-structure? '(("hello") "world") '(("good-bye") "sam"))
+
+#t
+> (sandwich-first 'meat 'bread '(bread bread))
+
+(bread meat bread )
+> (sandwich-first 'meat 'bread '())
+
+()
+> (sandwich-first 'meat 'bread '(meat meat))
+
+(meat meat)
+> (min-to-head '(5 8 1 0 6 2 1 9))
+
+(0 5 8 1 6 2 1 9)
+> (sort '(5 8 1 0 6 2 1 9))
+
+(0 1 1 2 5 6 8 9 )
+> (define mistake
+(lambda (a b a)
+(let ((d (+ a b)))
+d)))
+> 
+> 
+> 
+
+ERROR: MULTIPLY DEFINED SYMBOL "a"
+
+> (define error
+(lambda (a b)
+(let ((d (+ a b c)))
+d
+))) ;note: this code alone doesn't make the Petite Scheme Interpreter that the professor referred us to, complain. But calling "error" after definition should.
+> 
+> 
+> 
+> 
+
+
+> (error 2 3)
+
+ERROR: SYMBOL "c" NOT BOUND
+
+> (member? 'a)
+
+ERROR: WRONG NUMBER OF ARGUMENTS. PROCEDURE {procedure} TAKES 2
+
+> 
